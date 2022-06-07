@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="dev">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!-- Viewport  -->
+	<title>COX RIDER | STEALTH FREE MINT</title>
+	<link rel="shortcut icon" href="image/favicon.png" type="image/x-icon" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
+	<script type="module" src="./js/app.js"></script>
+	<link href="css/mint.css" rel="stylesheet" />
+	<!-- css  link -->
+	<!-- favicon icon -->
+
+
+	<!-- css  link -->
+
+</head>
+
+<body>
+
+	<script>
+		$(window).on('load', function () {
+			$('#loading').delay(3000).fadeOut(500);
+		})
+	</script>
+	<script>
+		//get all vids
+		var video = document.querySelectorAll('video')
+
+		//add source to video tag
+		function addSourceToVideo(element, src) {
+			var source = document.createElement('source');
+			source.src = src;
+			source.type = 'video/mp4';
+			console.log(src);
+			element.appendChild(source);
+
+		}
+
+		//determine screen size and select mobile or desktop vid
+		function whichSizeVideo(element, src) {
+			var windowWidth = window.innerWidth ? window.innerWidth : $(window).width();
+			if (windowWidth > 1200) {
+				addSourceToVideo(element, src.dataset.desktopVid);
+			} else {
+				addSourceToVideo(element, src.dataset.mobileVid);
+			}
+		}
+
+		//init only if page has videos
+		function videoSize() {
+			if (video !== undefined) {
+				video.forEach(function (element, index) {
+					whichSizeVideo(
+						element, //element
+						element //src locations
+					);
+				});
+			}
+		}
+		videoSize();
+
+
+		//note IE11 polyfill needed for each, convert to for loop.
+	</script>
+	<style>
+		#loading {
+			position: fixed;
+			display: block;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			text-align: center;
+
+			z-index: 99999;
+			right: 0;
+			background-color: #fff;
+		}
+
+		#bgvid {
+			position: absolute;
+			height: 100vh;
+			width: 100%;
+			object-fit: cover;
+			left: 0;
+			right: 0;
+		}
+
+		#video {
+			position: relative;
+			width: 100%;
+		}
+	</style>
+
+	<!-- Top Black Part Section Start -->
+	<div class="bg_section">
+		<div class="deopart-section position-relative">
+			<!-- <div id="mintPopup" class="mint-popup" style="display: none;">
+				<div class="bg-white close-button" style="cursor:pointer;" onclick="popup()">X</div>
+				 <iframe width="100%" height="550px" allowfullscreen="true" style="border:none;" loading="lazy"
+					title="CoxPlayerNFT"
+					src="https://mint.zerocodenft.com/Tabs?siteId=0d16dc43-4f1f-4b60-2602-08da43360b7b"></iframe> -->
+		</div> -->
+		<div class="mint-box">
+			<div class="row position-relative">
+				<div class="col-sm-6 p-0">
+					<div class="mint-Arcade-machine">
+						<div class="mint-Arcade-machine-box">
+							<img src="images/Arcade Machine.png" alt="">
+						</div>
+						<div class="mint-Arcade-machine-gif">
+							<img src="images/GIF.gif" alt="">
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6 p-0 mint-release-content">
+					<div class="min-release-box">
+						<div id="ConnectBTN" class="mint-connect-wallet-button">
+							<img src="images/Button_connectwallet(2x).png" alt="">
+						</div>
+						<div class="mint-connect-wallet-bg">
+							<img class="mint-connect-wallet-bg-img" src="images/Paper.png" alt="">
+							<div class="mint-release-cox-box">
+								<div class="mint-cox-release-button">
+									<span id="account"></span>
+									<img src="images/Release the COX!.png" alt="">
+								</div>
+								<div class="mint-progress-bar">
+									<div class="mint-progress-bar-progress"></div>
+								</div>
+								<div class="mint-total-supply">
+									<img class="mint-total-supply-img" src="images/Total supply.png" alt="">
+									<div class="mint-total-supply-count mb-2">6,969</div>
+									<div class="mint-short-des mb-3">
+										<img class="mb-2" src="images/First 2000 FREE (max 1 per wallet).png" alt="">
+										<img src="images/Rest 0.0069Ξ (max 10 per wallet).png" alt="">
+									</div>
+									<div class="mint-release-question">
+										<div class="mb-1">
+											<img src="images/Text 1.png" alt="">
+										</div>
+										<div class="mint-release-question-why mb-3">
+											<img src="images/Text 2.png" alt="">
+										</div>
+										<div class="mb-1">
+											<img src="images/Text 3.png" alt="">
+										</div>
+									</div>
+
+									<div class="d-flex align-items-center justify-content-end">
+
+										<div class="mint-quantity mr-3">
+
+											<div class="d-flex align-item-center">
+												<label>QTY:</label>
+
+												<div
+													class="input-group w-auto mb-2 justify-content-end align-items-center">
+													<input type="button" value="-"
+														class="button-minus   icon-shape icon-sm "
+														data-field="quantity">
+													<input id="amount" type="number" step="1" max="10" value="1"
+														name="quantity"
+														class="quantity-field border-0 text-center w-25">
+													<input type="button" value="+"
+														class="button-plus  icon-shape icon-sm " data-field="quantity">
+												</div>
+											</div>
+											<div class="mint-free-cox-text">
+												<img src="images/FREE THE COX!.png" alt="">
+											</div>
+										</div>
+										<a href="javascript:;" id="mintButton" data-toggle="0"
+											class="cox-circle-button">
+											<img src="images/Tombol(up).png" alt="">
+										</a>
+
+									</div>
+									<div class="d-flex align-items-center justify-content-end"><span id="ShowResult">
+										</span></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="videoWrapper desktop">
+
+			<video class="video1" muted="muted" loop autoplay id="myVideo">
+				<source src="images/CIXONCOX!.mp4" type="video/mp4">
+				Your browser does not support HTML5 video.
+			</video>
+		</div>
+		<div class="videoWrapper tabelt">
+			<video class="video1" muted="muted" loop autoplay id="myVideo">
+				<source src="images/tabelt.mp4" type="video/mp4">
+				Your browser does not support HTML5 video.
+			</video>
+		</div>
+		<div class="videoWrapper mobile">
+			<video class="video" muted="muted" loop autoplay id="myVideo">
+				<source src="images/mobilevideo.mp4" type="video/mp4">
+				Your browser does not support HTML5 video.
+			</video>
+			<canvas class="canvas"></canvas>
+		</div>
+
+
+
+		<script src="js/canvas-video-player.js"></script>
+		<script>
+			var isIOS = /iPad|iPhone|iPod/.test(navigator.platform);
+
+			if (isIOS) {
+
+				var canvasVideo = new CanvasVideoPlayer({
+					videoSelector: '.video',
+					canvasSelector: '.canvas',
+					timelineSelector: false,
+					autoplay: true,
+					makeLoop: true,
+					pauseOnClick: false,
+					audio: false
+				});
+
+
+			} else {
+
+				// Use HTML5 video
+				document.querySelectorAll('.canvas')[0].style.display = 'none';
+
+			}
+		</script>
+		<script>
+
+			function incrementValue(e) {
+				e.preventDefault();
+				var fieldName = $(e.target).data('field');
+				var parent = $(e.target).closest('div');
+				var currentVal = parseInt(parent.find('input[name=' + fieldName + ']').val(), 10);
+
+				if (!isNaN(currentVal)) {
+					parent.find('input[name=' + fieldName + ']').val(currentVal + 1);
+				} else {
+					parent.find('input[name=' + fieldName + ']').val(0);
+				}
+			}
+
+			function decrementValue(e) {
+				e.preventDefault();
+				var fieldName = $(e.target).data('field');
+				var parent = $(e.target).closest('div');
+				var currentVal = parseInt(parent.find('input[name=' + fieldName + ']').val(), 10);
+
+				if (!isNaN(currentVal) && currentVal > 0) {
+					parent.find('input[name=' + fieldName + ']').val(currentVal - 1);
+				} else {
+					parent.find('input[name=' + fieldName + ']').val(0);
+				}
+			}
+
+			$('.input-group').on('click', '.button-plus', function (e) {
+				incrementValue(e);
+			});
+
+			$('.input-group').on('click', '.button-minus', function (e) {
+				decrementValue(e);
+			});
+		</script>
+		<div class="coinimag">
+
+			<a data-toggle="modal" data-target="#mymodelterms"><img src="images/koin.gif" alt=""> </a>
+		</div>
+		<!-- <div class="footer">
+				<p>2022 CixOnCox </p>
+				<p>Degenerate at your own responsibility. The holders retain all rights. </p>
+			</div> -->
+	</div>
+	</div>
+	<!-- Top Black Part Section End -->
+	<div class="modal show" id="mymodelterms" tabindex="-1" role="dialog" aria-labelledby="basicModal"
+		aria-modal="true">
+		<div class="modal-dialog" style="margin-top: 0px;">
+			<div class="modal-content">
+
+
+				<div class="modal-body">
+					<div class="coinsimag">
+						<div class="cccoinsom">
+							<div class="bxomm">
+								<h1> The Journey of Cix <button type="button" class="close" data-dismiss="modal"
+										aria-label="Close">
+										<span aria-hidden="true">×</span>
+									</button> </h1>
+								<p>Once upon a time, in a faraway and stranded ocean, unbeknownst to anyone, there
+									was
+									an island, dwelled by Hot Chicks only. No man has ever cum to this island. These
+									chicks live side by side with Phoecocks, a creature with a hard, throbbing, and
+									vibrating cock as their genitalia. </p>
+								<p>
+									All this time, the desire of these Hot Chicks has been satisfied by these
+									Phoecocks.
+									It’s not before long until Hot Chicks’ lust grows even bigger and they become
+									enchanted by it. And so, they become violent and they start killing each other,
+									to
+									conquer more Phoecocks owned by their other kins. Conflict wages between tribes,
+									blood spilled everywhere, relatives killing each other, all in order to
+									subjugate
+									more Phoecocks. Now, it is up to you to help those Hot Chicks conquer more
+									Phoecocks
+								</p>
+							</div>
+						</div>
+						<a href="#"><img src="images/Mint_button.png" alt=""> </a>
+					</div>
+
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

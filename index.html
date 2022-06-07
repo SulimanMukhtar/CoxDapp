@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="dev">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Viewport  -->
+  <title>COX RIDER | STEALTH FREE MINT</title>
+  <link rel="shortcut icon" href="image/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- css  link -->
+  <!-- favicon icon -->
+
+
+  <!-- css  link -->
+
+</head>
+
+<body>
+  <div id="loading">
+
+    <div id="video">
+      <video id="bgvid" preload="auto" autoplay muted="" playsinline="" class=""
+        data-desktop-vid="images/flying-loading.mp4" data-mobile-vid="images/flying-loading.mp4">
+      </video>
+
+    </div>
+  </div>
+  <script>
+    $(window).on('load', function () {
+      $('#loading').delay(3000).fadeOut(500);
+    })
+  </script>
+  <script>
+    //get all vids
+    var video = document.querySelectorAll('video')
+
+    //add source to video tag
+    function addSourceToVideo(element, src) {
+      var source = document.createElement('source');
+      source.src = src;
+      source.type = 'video/mp4';
+      console.log(src);
+      element.appendChild(source);
+
+    }
+
+    //determine screen size and select mobile or desktop vid
+    function whichSizeVideo(element, src) {
+      var windowWidth = window.innerWidth ? window.innerWidth : $(window).width();
+      if (windowWidth > 1200) {
+        addSourceToVideo(element, src.dataset.desktopVid);
+      } else {
+        addSourceToVideo(element, src.dataset.mobileVid);
+      }
+    }
+
+    //init only if page has videos
+    function videoSize() {
+      if (video !== undefined) {
+        video.forEach(function (element, index) {
+          whichSizeVideo(
+            element, //element
+            element //src locations
+          );
+        });
+      }
+    }
+    videoSize();
+
+
+    //note IE11 polyfill needed for each, convert to for loop.
+  </script>
+  <style>
+    #loading {
+      position: fixed;
+      display: block;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      text-align: center;
+
+      z-index: 99999;
+      right: 0;
+      background-color: #fff;
+    }
+
+    #bgvid {
+      position: absolute;
+      height: 100vh;
+      width: 100%;
+      object-fit: cover;
+      left: 0;
+      right: 0;
+    }
+
+    #video {
+      position: relative;
+      width: 100%;
+    }
+  </style>
+  <!-- Top Black Part Section Start -->
+  <div class="bg_section">
+    <div class="deopart-section">
+
+      <div class="header">
+        <div class="socialcions">
+          <ul>
+            <li> <a href="#"><img src="images/image_2.png" alt=""> </a></li>
+            <li> <a href="#"><img src="images/image_3.png" alt=""> </a></li>
+            <li> <a href="https://twitter.com/COX_RIDER"><img src="images/image_4.png" alt=""> </a></li>
+          </ul>
+        </div>
+        <div class="logo"><a href="mint.html"><img src="images/logo.png" alt=""> </a> </div>
+      </div>
+      <div class="videoWrapper desktop">
+
+        <video class="video1" muted="muted" loop autoplay id="myVideo">
+          <source src="images/CIXONCOX!.mp4" type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
+      <div class="videoWrapper tabelt">
+        <video class="video1" muted="muted" loop autoplay id="myVideo">
+          <source src="images/tabelt.mp4" type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
+      <div class="videoWrapper mobile">
+        <video class="video" muted="muted" loop autoplay id="myVideo">
+          <source src="images/mobilevideo.mp4" type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
+        <canvas class="canvas"></canvas>
+      </div>
+
+
+
+      <script src="js/canvas-video-player.js"></script>
+      <script>
+        var isIOS = /iPad|iPhone|iPod/.test(navigator.platform);
+
+        if (isIOS) {
+
+          var canvasVideo = new CanvasVideoPlayer({
+            videoSelector: '.video',
+            canvasSelector: '.canvas',
+            timelineSelector: false,
+            autoplay: true,
+            makeLoop: true,
+            pauseOnClick: false,
+            audio: false
+          });
+
+
+        } else {
+
+          // Use HTML5 video
+          document.querySelectorAll('.canvas')[0].style.display = 'none';
+
+        }
+      </script>
+
+      <div class="coinimag">
+
+        <a data-toggle="modal" data-target="#mymodelterms"><img src="images/koin.gif" alt=""> </a>
+      </div>
+      <div class="footer">
+        <p>2022 coxrider </p>
+        <p>Degenerate at your own responsibility. The holders retain all rights. </p>
+      </div>
+    </div>
+  </div>
+  <!-- Top Black Part Section End -->
+  <div class="modal show" id="mymodelterms" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-modal="true">
+    <div class="modal-dialog" style="margin-top: 0px;">
+      <div class="modal-content">
+
+
+        <div class="modal-body">
+          <div class="coinsimag">
+            <div class="cccoinsom">
+              <div class="bxomm">
+                <h1> The Journey of Cix <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                  </button> </h1>
+                <p>Hidden away on the edge of civilization, on a wondrous island, inhabited a race of enchanted,
+                  spherically talented maidens known as the CIX. 6,969 CIX(s) are trapped on this island. Alongside the
+                  CIX, are the legendary COX, a noble and powerful bird-like creature, always readied to attention, ever
+                  eager to fulfill their hungry owners. The COX were highly revered and the CIX took great lengths in
+                  training and grooming their COX. The creatures were a proud display of every color, shape, and size.
+                </p>
+                <p>
+                  Legend says the only way for them to escape the island is by the hands of web3. The time has come when
+                  the web3 rise to the challenge to free the CIX. In their gratitude, the CIX swore to destroy the enemy
+                  of web3, The Degenerates!
+                </p>
+              </div>
+            </div>
+            <a href="mint.html"><img src="images/Mint_button.png" alt=""> </a>
+          </div>
+
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
