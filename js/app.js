@@ -12,7 +12,7 @@ let ShowResult = document.getElementById('ShowResult');
 // result.style.display = "none";
 
 
-const Contract = "0xD5113F8A86DE05d20c57dE8D77D3c6113Bb346ba";
+const Contract = "0x35C8e7398A2e491eA355baB5aE657B6456F51AB3";
 const ABI = [
     {
         "inputs": [],
@@ -792,8 +792,8 @@ async function switchNetwork() {
 
 async function getAccount() {
     switchNetwork();
-    let from = await instance.totalSupply();
-    let to = await instance.maxSupply();
+    // let from = await instance.totalSupply();
+    // let to = await instance.maxSupply();
 
     account = await signer.getAddress();
     balance = await signer.getBalance();
@@ -817,12 +817,36 @@ async function Mint() {
     let account = await signer.getAddress();
     // let price = 280000000000000000; 
     // let price = ethers.utils.parseUnits("0", 18); //Whitelist Price
-    let price;
-    let ETHPaid;
+    let price = await instance.publicCost();;
+    let ETHPaid = 0;
+    console.log(account);
 
-    price = await instance.publicCost();
-    ETHPaid = price * amount.value / 10 ** 18;
-    console.log(ETHPaid.toString());
+    let balance = await instance.balanceOf(account);
+    balance = balance.toString();
+    console.log(balance);
+    let freeAmount = await instance.maxFree();
+
+    if (amount.value > 1) {
+        console.log("More than 1");
+        if (balance == 0) {
+            console.log("Balance is 0");
+            let Amount = amount.value - freeAmount;
+            ETHPaid = price * Amount / 10 ** 18;
+        } else {
+            console.log("Balance is not 0");
+            ETHPaid = price * amount.value / 10 ** 18;
+        }
+    } else {
+        console.log("amount is 1");
+        if (balance == 0) {
+            console.log("Balance is 0");
+            ETHPaid = 0;
+        } else {
+            ETHPaid = price * amount.value / 10 ** 18;
+        }
+    }
+
+
     await instance.mint(amount.value, { value: ethers.utils.parseUnits(ETHPaid.toString()) })
         .then(function (Result) {
             console.log(Result);
