@@ -6,11 +6,30 @@ var connect = document.getElementById("ConnectBTN");
 var counter = document.getElementById("counter");
 var Account = document.getElementById("account");
 var result = document.getElementById("result");
-
+var mintProgressBar = document.getElementById('mintProgressBar')
+var mintTotalsupply = document.getElementById('totalsupply')
 let ShowResult = document.getElementById('ShowResult');
-
+var ProgressWidth;
 // result.style.display = "none";
 
+function hideobject(objectid) {
+    console.log('clicked close button')
+    document.getElementById(objectid).style.display = 'none'
+}
+
+function setProgressbarSupply(mintNumber) {
+    mintProgressBar.ariaValueNow = mintNumber
+    mintTotalsupply.innerHTML = mintNumber
+    ProgressWidth = mintNumber / 6969 * 100;
+    mintProgressBar.style.width = ProgressWidth + "%";
+}
+
+function addsupply(mintNumber) {
+    mintProgressBar.ariaValueNow = parseInt(mintProgressBar.ariaValueNow) + mintNumber
+    mintTotalsupply.innerHTML = mintProgressBar.ariaValueNow
+}
+// setProgressbarSupply(2278)
+// addsupply(8)
 
 const Contract = "0x35C8e7398A2e491eA355baB5aE657B6456F51AB3";
 const ABI = [
@@ -792,8 +811,9 @@ async function switchNetwork() {
 
 async function getAccount() {
     switchNetwork();
-    // let from = await instance.totalSupply();
-    // let to = await instance.maxSupply();
+    let from = await instance.totalSupply();
+    let to = await instance.maxSupply();
+    setProgressbarSupply(from)
 
     account = await signer.getAddress();
     balance = await signer.getBalance();
@@ -852,7 +872,8 @@ async function Mint() {
             console.log(Result);
             // result.style.display = "block";
             let hash = Result.hash;
-            ShowResult.innerHTML = "COX Minted Successfully . <a href='https://www.etherscan.io/tx/" + hash + "'>Transaction</a>";
+            document.getElementById('lovecox').style.display = 'block';
+            // ShowResult.innerHTML = "COX Minted Successfully . <a href='https://www.etherscan.io/tx/" + hash + "'>Transaction</a>";
             // result.style.display = "flex";
 
             console.log(hash);
@@ -864,13 +885,15 @@ async function Mint() {
                     alert(error.error.message.slice(20));
                     ShowResult.innerHTML = error.error.message.slice(20);
                 } else if (error.error.code === -32000) {
-                    ShowResult.innerHTML = "Insufficient funds";
+                    //ShowResult.innerHTML = "Insufficient funds";
+                    document.getElementById('oops-popup').style.display = 'block';
 
                 } else {
                     console.log("???");
                 }
             } else if (error.code === 4001) {
-                ShowResult.innerHTML = "Mint Canceled , Please Try Again";
+                //ShowResult.innerHTML = "Mint Canceled , Please Try Again";
+                document.getElementById('sad-popup').style.display = 'block';
             }
 
         });

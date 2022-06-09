@@ -305,16 +305,13 @@ a.mint-popup-transaction {
 	border: 4px solid #294a60;
 	border-radius: 10px;
 	margin-top: 20px;
-	height: 28px;
 }
 
-.mint-progress-count {
-	color: #7a2424;
-	font-size: 20px;
-}
-
-.progress-bar {
-	background-color: #EB1657;
+.mint-progress-bar-progress {
+	width: 54%;
+	height: 25px;
+	background: #eb1657;
+	border-radius: 5px;
 }
 
 
@@ -591,6 +588,9 @@ input::-webkit-inner-spin-button {
 		height: 225vh;
 	}
 
+	.mint-popup-box {
+		height: 426px;
+	}
 
 	.mint-popup {
 		width: 80%;
@@ -691,7 +691,7 @@ input::-webkit-inner-spin-button {
 	}
 
 	img.mint-connect-wallet-bg-img {
-		height: 385px;
+		height: 380px;
 	}
 }
 
@@ -706,24 +706,17 @@ input::-webkit-inner-spin-button {
 	}
 
 	img.mint-connect-wallet-bg-img {
-		height: 350px;
+		height: 330px;
 	}
 }
 
 @media(max-width:375px) {
 	img.mint-connect-wallet-bg-img {
-		height: 395px;
+		height: 310px;
 	}
 
 	.cox-circle-button {
 		height: 48px;
-	}
-
-	@media (max-width: 390px) {
-
-		.mint-box {
-			padding: 0 0%;
-		}
 	}
 }
 
@@ -733,10 +726,12 @@ input::-webkit-inner-spin-button {
 	}
 
 	img.mint-connect-wallet-bg-img {
-		height: 350px;
+		height: 310px;
 	}
 
-
+	img.mint-connect-wallet-bg-img {
+		height: 318px;
+	}
 }
 
 @media(max-width:320px) {
@@ -763,7 +758,7 @@ input::-webkit-inner-spin-button {
 	}
 
 	img.mint-connect-wallet-bg-img {
-		height: 370px;
+		height: 335px;
 	}
 }
 
@@ -781,10 +776,6 @@ input::-webkit-inner-spin-button {
 	.mint-box {
 		padding: 0 6%;
 	}
-
-	img.mint-connect-wallet-bg-img {
-		height: 360px;
-	}
 }
 
 @media only screen and (device-width: 360px) and (device-height: 740px) and (-webkit-device-pixel-ratio: 4) {
@@ -793,7 +784,7 @@ input::-webkit-inner-spin-button {
 	}
 
 	img.mint-connect-wallet-bg-img {
-		height: 360px;
+		height: 330px;
 	}
 
 	.videoWrapper video,
@@ -823,12 +814,7 @@ input::-webkit-inner-spin-button {
 	}
 
 	img.mint-connect-wallet-bg-img {
-		height: 390px;
-	}
-
-	.videoWrapper video,
-	.videoWrapper .canvas {
-		height: 123vh;
+		height: 360px;
 	}
 }
 
@@ -838,7 +824,7 @@ input::-webkit-inner-spin-button {
 	}
 
 	img.mint-connect-wallet-bg-img {
-		height: 394px;
+		height: 360px;
 	}
 
 	.videoWrapper video,
@@ -853,7 +839,7 @@ input::-webkit-inner-spin-button {
 	}
 
 	img.mint-connect-wallet-bg-img {
-		height: 404px;
+		height: 362px;
 	}
 
 	.videoWrapper video,
@@ -868,12 +854,12 @@ input::-webkit-inner-spin-button {
 	}
 
 	img.mint-connect-wallet-bg-img {
-		height: 414px;
+		height: 385px;
 	}
 
 	.videoWrapper video,
 	.videoWrapper .canvas {
-		height: 120vh;
+		height: 116vh;
 	}
 }
 
@@ -888,7 +874,7 @@ input::-webkit-inner-spin-button {
 	}
 
 	img.mint-connect-wallet-bg-img {
-		height: 418px;
+		height: 388px;
 	}
 }
 
